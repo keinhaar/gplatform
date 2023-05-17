@@ -43,27 +43,64 @@ abstract public class GPlatform
      */
     abstract public GPDocument getDocument();
 
+    /**
+     * Return the GPWindow Wrapper around the browser window.
+     * @return
+     */
     abstract public GPWindow getWindow();
 
+    /**
+     * Return the single instance of the GPlatform.
+     * @return
+     */
     public static GPlatform getInstance()
     {
         return instance;
     }
 
+    /**
+     * @param font
+     * @param text
+     * @return the width in pixel of the given text when font is used.
+     */
     abstract public double stringWidth(String font, String text);
 
     public abstract String getModuleBaseForStaticFiles();
 
+    /**
+     * @return the URL from which the app is loaded
+     */
     public abstract String getModuleBaseURL();
 
+    /**
+     * 
+     * @return
+     */
     public abstract double getDevicePixelRatio();
     
+    /**
+     * Return the Stylesheet at index .
+     * @param index
+     * @return
+     */
     public abstract GPStyleSheet getStyleSheet(int index);
 
+    /**
+     * Return the number of Stylesheets 
+     * @return
+     */
     public abstract int getStyleSheetCount();
     
+    /**
+     * Create a GPTimer to allow to run deferred commands.
+     * @return
+     */
     public abstract GPTimer createTimer();
     
+    /**
+     * Open a Browser popup -> window.alert().
+     * @param text
+     */
     public abstract void alert(String text);
     
     /**
@@ -80,5 +117,13 @@ abstract public class GPlatform
     	public void onError(Throwable t);
     }
     
+    /**
+     * @return a GPStorage instance representing the local browser storage.
+     */
     public abstract GPStorage getLocalStorage();
+
+    /**
+     * Clear any Text selection on the HTML Page.
+     */
+    public abstract void clearSelection();
 }
