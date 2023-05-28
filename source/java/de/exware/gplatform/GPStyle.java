@@ -176,4 +176,9 @@ public interface GPStyle
     {
         setProperty("overflow", overflow);
     }
+    
+    public default void setPaddingLeft(int paddingLeft)
+    {
+        setProperty("paddingLeft", paddingLeft + "px");
+    }
 }
