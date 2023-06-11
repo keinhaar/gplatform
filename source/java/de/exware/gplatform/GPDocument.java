@@ -4,6 +4,7 @@ import de.exware.gplatform.element.GPCanvasElement;
 import de.exware.gplatform.element.GPImageElement;
 import de.exware.gplatform.element.GPInputElement;
 import de.exware.gplatform.element.GPOptionElement;
+import de.exware.gplatform.element.GPRangeElement;
 import de.exware.gplatform.element.GPSelectElement;
 import de.exware.gplatform.element.GPTextAreaElement;
 
@@ -37,4 +38,6 @@ public interface GPDocument
     public GPInputElement createTextInputElement();
 
     public GPInputElement createPasswordInputElement();
+
+    public GPRangeElement createRangeElement();
 }

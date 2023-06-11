@@ -46,5 +46,15 @@ public class Build extends JavaBuilder
     public void clean() throws IOException
     {
         Utilities.delete(new File("dist"));
+        Utilities.delete(new File("out"));
+        Utilities.delete(new File("tmp"));
+        new File("out").mkdir();
+    }
+
+    @Override
+    public void compile() throws Exception
+    {      
+        addSources("source/java");
+        super.compile();
     }
 }
