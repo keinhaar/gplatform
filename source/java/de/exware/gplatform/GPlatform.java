@@ -126,4 +126,19 @@ abstract public class GPlatform
      * Clear any Text selection on the HTML Page.
      */
     public abstract void clearSelection();
+    
+    /**
+     * Gets a String representation of the virtual machien provider
+     * like GWT or TeaVM.
+     * @return The string which represents the virtual machine provider.
+     */
+    public abstract String getVirtualMachineProvider();
+    
+    /**
+     * Gets a string which represents the underlying platform technology
+     * like Google Chrome, Mozilla Firefox, Opera or Microsoft Edge.
+     * @return Returns a platform specific string determined by the
+     * 		   the virtual machine provider.	
+     */
+    public abstract String getPlatform();
 }
