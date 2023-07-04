@@ -10,15 +10,15 @@ import de.exware.gplatform.timer.GPTimer;
  */
 abstract public class GPlatform
 {
-	public enum Browser {
-		UNDEFINED, OPERA, EDGE, CHROME, SAFARI, FIREFOX, INTERNET_EXPLORER
+    public enum Browser {
+        UNDEFINED, OPERA, EDGE, CHROME, SAFARI, FIREFOX, INTERNET_EXPLORER
     }
 	
-	public enum VirtualMachineProvider {
-		UNDEFINED, GWT, TEAVM
-	}
+    public enum VirtualMachineProvider {
+        UNDEFINED, GWT, TEAVM
+    }
 	
-	private static GPlatform instance;
+    private static GPlatform instance;
     
     protected GPlatform()
     {
