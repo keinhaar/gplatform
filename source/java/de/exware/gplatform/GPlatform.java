@@ -10,7 +10,15 @@ import de.exware.gplatform.timer.GPTimer;
  */
 abstract public class GPlatform
 {
-    private static GPlatform instance;
+	public enum Browser {
+		UNDEFINED, OPERA, EDGE, CHROME, SAFARI, FIREFOX, INTERNET_EXPLORER
+    }
+	
+	public enum VirtualMachineProvider {
+		UNDEFINED, GWT, TEAVM
+	}
+	
+	private static GPlatform instance;
     
     protected GPlatform()
     {
@@ -126,4 +134,8 @@ abstract public class GPlatform
      * Clear any Text selection on the HTML Page.
      */
     public abstract void clearSelection();
+    
+    public abstract Browser getBrowser();
+    
+    public abstract VirtualMachineProvider getVirtualMachineProvider();
 }
