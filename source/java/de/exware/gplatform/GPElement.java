@@ -82,6 +82,8 @@ public interface GPElement
 
     public int getPropertyInt(String name);
 
+    public Object getPropertyObject(String name);
+    
     public void setPropertyInt(String name, int value);
     
     public void focus();
