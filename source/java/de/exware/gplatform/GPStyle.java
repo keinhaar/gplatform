@@ -159,12 +159,12 @@ public interface GPStyle
     
     public default void setWidthInPercent(double width)
     {
-        setProperty("width", width + "pct");
+        setProperty("width", width + "%");
     }
     
     public default void setHeightInPercent(double height)
     {
-        setProperty("height", height + "pct");
+        setProperty("height", height + "%");
     }
     
     public default void setPadding(int padding)
@@ -180,5 +180,20 @@ public interface GPStyle
     public default void setPaddingLeft(int paddingLeft)
     {
         setProperty("paddingLeft", paddingLeft + "px");
+    }
+    
+    public default void setPaddingRight(int padding)
+    {
+        setProperty("paddingRight", padding + "px");
+    }
+    
+    public default void setPaddingTop(int padding)
+    {
+        setProperty("paddingTop", padding + "px");
+    }
+    
+    public default void setPaddingBottom(int padding)
+    {
+        setProperty("paddingBottom", padding + "px");
     }
 }
