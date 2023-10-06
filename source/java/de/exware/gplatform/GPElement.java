@@ -11,6 +11,8 @@ public interface GPElement
 
     public void setClassName(String classname);
 
+    public boolean hasClassName(String classname);
+
     public void addClassName(String classname);
 
     public void removeClassName(String classname);
@@ -87,6 +89,8 @@ public interface GPElement
     public void setPropertyInt(String name, int value);
     
     public void focus();
+
+    public boolean hasFocus();
 
     public int getClientWidth();
 }
