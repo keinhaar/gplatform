@@ -79,7 +79,13 @@ public interface GPElement
     public void setInnerText(String str);
     
     public void setAttribute(String name, String value);
-
+    
+    public String getAttribute(String name);
+    
+    public boolean hasAttribute(String name);
+    
+    public void removeAttribute(String name);
+    
     public String getPropertyString(String name);
 
     public int getPropertyInt(String name);
