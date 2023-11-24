@@ -14,7 +14,7 @@ public class Build extends JavaBuilder
     
     public Build()
     {
-        super();
+        super(PROJECTNAME);
     }
 
     @Override
