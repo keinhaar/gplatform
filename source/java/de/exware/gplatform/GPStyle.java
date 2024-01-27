@@ -4,6 +4,7 @@ public interface GPStyle
 {
     public void setProperty(String name, String value);
     public String getProperty(String name);
+    public void clearProperty(String name);
     
     public default void setBackgroundColor(String col)
     {
@@ -42,12 +43,12 @@ public interface GPStyle
     
     public default void clearWidth()
     {
-        setProperty("width", "");
+        clearProperty("width");
     }
     
     public default void clearHeight()
     {
-        setProperty("height", "");
+        clearProperty("height");
     }
     
     public default void setPosition(String position)
@@ -144,7 +145,7 @@ public interface GPStyle
 
     public default void clearColor()
     {
-        setProperty("color", "");
+        clearProperty("color");
     }
     
     public default void setZIndex(int i)

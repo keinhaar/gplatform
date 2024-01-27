@@ -68,7 +68,7 @@ public interface GPElement
 
     public String getInnerHTML();
 
-    public void insertAfter(GPElement before, GPElement after);
+    public void insertAfter(GPElement newChild, GPElement after);
 
     public void setTabIndex(int i);
 
