@@ -6,17 +6,42 @@ public interface GPStyleSheet
 {
     CSSRule getCSSRule(String selector);
 
-    String getHref() /*-{
-        var st = this.href;
-        return st;                
-    }-*/;
+    String getHref();
+
+    /**
+     * Allow to enable this stylesheet.
+     * Be aware, that Stylesheets can only be enabled if they are preferred or alternative.
+     * This Method will not have any effect on normal Stylesheets.
+     * @param enabled
+     */
+    public void setEnabled(boolean enabled);
+    
+    /**
+     * Returns a Stylesheet whos href ends with the given name.
+     * @param name
+     * @return
+     */
+    public static GPStyleSheet getStyleSheet(String name)
+    {
+        GPStyleSheet sheet = null;
+        for(int i=GPlatform.getInstance().getStyleSheetCount()-1;i>=0;i--)
+        {
+            GPStyleSheet st = GPlatform.getInstance().getStyleSheet(i);
+            if(st.getHref().endsWith(name))
+            {
+                sheet = st;
+                break;
+            }
+        }
+        return sheet;
+    }
 
     public static String getColor(String selector, String property)
     {
         String col = null;
         CSSRule rule = null;
         for(int i=GPlatform.getInstance().getStyleSheetCount()-1;col == null && i>=0;i--)
-        {
+        {            
             try
             {
                 GPStyleSheet st = GPlatform.getInstance().getStyleSheet(i);

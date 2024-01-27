@@ -50,4 +50,6 @@ public interface GPDocument
 
     public GPFileInputElement createFileInputElement();
 
+    public GPElement getDocumentElement();
+
 }
