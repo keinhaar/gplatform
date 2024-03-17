@@ -1,5 +1,6 @@
 package de.exware.gplatform;
 
+import de.exware.gplatform.log.LogFactory;
 import de.exware.gplatform.style.GPStyleSheet;
 import de.exware.gplatform.timer.GPTimer;
 
@@ -27,6 +28,7 @@ abstract public class GPlatform
             throw new RuntimeException("Duplicate initialization of GPlatform.");
         }
         instance = this;
+        LogFactory.getLog(getClass()).debug("GPlatform initialized: " + instance.getClass().getName());
     }
     
     /**
