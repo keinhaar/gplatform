@@ -3,7 +3,7 @@ package de.exware.gplatform.log;
 public class LogFactory
 {
     private static LogFactory instance = new LogFactory();
-    private int defaultLogLevel = Log.DEBUG;
+    private static int defaultLogLevel = Log.DEBUG;
     
     /**
      * Subclasses will automatically be set as instance by calling their constructor.
@@ -13,7 +13,7 @@ public class LogFactory
         instance = this;
     }
     
-    public static Log getLog(Class clazz)
+    public static Log getLog(Class<?> clazz)
     {
         return getLog(clazz.getName());
     }
@@ -28,5 +28,20 @@ public class LogFactory
     protected Log createLog(String name)
     {
         return new DefaultLog(name);
+    }
+
+    public static int getDefaultLogLevel()
+    {
+        return defaultLogLevel;
+    }
+
+    public static void setDefaultLogLevel(int defaultLogLevel)
+    {
+        LogFactory.defaultLogLevel = defaultLogLevel;
+    }
+
+    public static LogFactory getInstance()
+    {
+        return instance;
     }
 }

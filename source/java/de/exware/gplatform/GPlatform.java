@@ -95,11 +95,19 @@ abstract public class GPlatform
      */
     public abstract GPStyleSheet getStyleSheet(int index);
 
+    public abstract GPStyleSheet getStyleSheet(String name);
+  
     /**
      * Return the number of Stylesheets 
      * @return
      */
     public abstract int getStyleSheetCount();
+    
+    /**
+     * Return the number of Stylesheets 
+     * @return
+     */
+    public abstract void addStyleSheet(String url);
     
     /**
      * Create a GPTimer to allow to run deferred commands.
@@ -140,4 +148,5 @@ abstract public class GPlatform
     public abstract Browser getBrowser();
     
     public abstract VirtualMachineProvider getVirtualMachineProvider();
+
 }

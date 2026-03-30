@@ -17,17 +17,30 @@ public interface GPStyleSheet
     public void setEnabled(boolean enabled);
     
     /**
-     * Returns a Stylesheet whos href ends with the given name.
-     * @param name
+     * Returns the name of the stylesheet without path.
+     * for <b>http://example.qwe/abc/style.css</b> this would be <b>style.css</b> 
      * @return
      */
-    public static GPStyleSheet getStyleSheet(String name)
+    default public String getName()
+    {
+        String name = getHref();
+        int index = name.lastIndexOf('/');
+        name = name.substring(index+1);
+        return name;
+    }
+    
+    /**
+     * Returns a Stylesheet whos href ends with the given path.
+     * @param path
+     * @return
+     */
+    public static GPStyleSheet getStyleSheet(String path)
     {
         GPStyleSheet sheet = null;
         for(int i=GPlatform.getInstance().getStyleSheetCount()-1;i>=0;i--)
         {
             GPStyleSheet st = GPlatform.getInstance().getStyleSheet(i);
-            if(st.getHref().endsWith(name))
+            if(st.getHref().endsWith(path))
             {
                 sheet = st;
                 break;
