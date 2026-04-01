@@ -8,6 +8,7 @@ import de.exware.nobuto.utils.Utilities;
 public class Build extends JavaBuilder
 {
     private static final String PROJECTNAME = "de.exware.gplatform";
+    private static final String ARTIFACT_ID = "gplatform";
     
     private File jarFile = new File("dist/" + PROJECTNAME + ".jar");
     private File sourceJarFile = new File("dist/" + PROJECTNAME + "-sources.jar");
@@ -30,8 +31,8 @@ public class Build extends JavaBuilder
         clean();
         dist();
         createSourceJar();
-        Maven.getDefaultinstance().installJar(jarFile, "de.exware", PROJECTNAME, getVersion());
-        Maven.getDefaultinstance().installSourceJar(sourceJarFile, "de.exware", PROJECTNAME, getVersion());
+        Maven.getDefaultinstance().installJar(jarFile, "de.exware", ARTIFACT_ID, getVersion());
+        Maven.getDefaultinstance().installSourceJar(sourceJarFile, "de.exware", ARTIFACT_ID, getVersion());
     }
 
     public void createSourceJar() throws IOException
