@@ -197,4 +197,9 @@ public interface GPStyle
     {
         setProperty("paddingBottom", padding + "px");
     }
+    
+    public default String getDisplay()
+    {
+        return getProperty("display");
+    }
 }

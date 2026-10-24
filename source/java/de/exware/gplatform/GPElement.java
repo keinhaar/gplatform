@@ -99,4 +99,6 @@ public interface GPElement
     public boolean hasFocus();
 
     public int getClientWidth();
+    
+    public String getTagName();
 }
